@@ -1,136 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>ST</title>
-      <style>
-         body {
-         background-image: url("https://images3.alphacoders.com/118/1182777.png");
-         background-size: cover;
-         background-position: center;
-         font-family: Arial, sans-serif; /* Example font family */
-         margin: 0;
-         padding: 0;
-         }
-         header {
-         background-color: #343a40;
-         color: white;
-         padding: 20px;
-         text-align: center;
-         font-size: 28px;
-         }
-         nav {
-         background-color: #495057;
-         color: white;
-         padding: 10px 0;
-         text-align: center;
-         }
-         nav a {
-         color: white;
-         text-decoration: none;
-         margin: 0 15px;
-         font-size: 18px;
-         transition: color 0.3s ease-in-out;
-         }
-         nav a:hover {
-         color: #ffc107; /* Change to a color of your choice */
-         }
-         main {
-         padding: 20px;
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-         }
-         .game {
-         margin: 20px;
-         width: 300px;
-         background-color: white;
-         border-radius: 10px;
-         overflow: hidden;
-         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-         }
-         .game:hover {
-         transform: scale(1.05);
-         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-         }
-         .game img {
-         width: 100%;
-         height: auto;
-         border-bottom: 1px solid #ddd;
-         border-radius: 10px 10px 0 0;
-         }
-         .game-info {
-         padding: 15px;
-         }
-         .game-title {
-         font-size: 20px;
-         margin-bottom: 10px;
-         }
-         .game-description {
-         font-size: 16px;
-         color: #777;
-         margin-bottom: 15px;
-         }
-         .game-button {
-         display: block;
-         background-color: #007bff;
-         color: white;
-         padding: 10px 0;
-         text-align: center;
-         text-decoration: none;
-         border: none;
-         border-radius: 5px;
-         cursor: pointer;
-         transition: background-color 0.3s ease-in-out;
-         }
-         .game-button:hover {
-         background-color: #0056b3;
-         }
-         footer {
-         background-color: #343a40;
-         color: white;
-         text-align: center;
-         padding: 30px 0;
-         position: fixed;
-         width: 100%;
-         bottom: 0;
-         }
-      </style>
-   </head>
-   <body>
-      <header>
-         <h1>ST Corporation</h1>
-      </header>
-      <nav>
-         <a href="#">Home</a>
-         <a href="#">Games</a>
-         <a href="#">About</a>
-         <a href="#">Contact</a>
-      </nav>
-      <main>
-         <div class="game">
-            <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
-            <div class="game-info">
-               <h2 class="game-title">Cat House</h2>
-               <p class="game-description">A idle game with many cat in a beautiful house</p>
-               <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ST Corporation</title>
+        <style>
+            body {
+            background-image: url("https://images3.alphacoders.com/118/1182777.png");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif; /* Example font family */
+            margin: 0;
+            padding: 0;
+            }
+            header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            }
+            nav {
+            background-color: #495057;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            }
+            nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+            }
+            nav a:hover {
+            color: #ffc107; /* Change to a color of your choice */
+            }
+            main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            }
+            .game {
+            margin: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
+            .game:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            .game img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            border-radius: 10px 10px 0 0;
+            }
+            .game-info {
+            padding: 15px;
+            }
+            .game-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            }
+            .game-description {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+            }
+            .platform-icons {
+            margin-top: 10px;
+            }
+            .platform-icons i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #777; /* Adjust the color as needed */
+            }
+            .game-button {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            }
+            .game-button:hover {
+            background-color: #0056b3;
+            }
+            footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>ST Corporation</h1>
+        </header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <main>
+            <div class="game">
+                <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
+                <div class="game-info">
+                    <h2 class="game-title">Cat House</h2>
+                    <p class="game-description">A idle game with many cat in a beautiful house</p>
+                    <div class="platform-icons">
+                        <i class="fab fa-windows"></i> <!-- Icon for Windows -->
+                        <i class="fab fa-android"></i> <!-- Icon for Android -->
+                        <i class="fab fa-apple"></i> <!-- Icon for iOS -->
+                        <i class="fab fa-apple"></i> <!-- Icon for macOS -->
+                    </div>
+                    <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
+                </div>
             </div>
-         </div>
-         <div class="game">
-            <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.6435-9/126230936_3589386461121125_2437320804972726597_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGk3mrAQeczs4MJLFur6pGJnh_zikI3LxmeH_OKQjcvGVozskdxQAcGprbkSKyuUv-qlvVboNfcYBLUh4nA96Ue&_nc_ohc=sVEmkNhOrosQ7kNvgGkOfRb&_nc_ht=scontent.fsgn2-9.fna&oh=00_AYCsNvHdBJaZfUEbaONImQ1fCzqAeqnpflboZyJMPKsV4g&oe=6680433F" alt="Game 2">
-            <div class="game-info">
-               <h2 class="game-title">Coming soon</h2>
-               <!--<p class="game-description">...</p>-->
-               <!--<a href="#" class="game-button">Play Now</a>-->
+            <div class="game">
+                <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.6435-9/126230936_3589386461121125_2437320804972726597_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGk3mrAQeczs4MJLFur6pGJnh_zikI3LxmeH_OKQjcvGVozskdxQAcGprbkSKyuUv-qlvVboNfcYBLUh4nA96Ue&_nc_ohc=sVEmkNhOrosQ7kNvgGkOfRb&_nc_ht=scontent.fsgn2-9.fna&oh=00_AYCsNvHdBJaZfUEbaONImQ1fCzqAeqnpflboZyJMPKsV4g&oe=6680433F" alt="Game 2">
+                <div class="game-info">
+                    <h2 class="game-title">Coming soon</h2>
+                    <!--<p class="game-description">...</p>-->
+                    <!--<a href="#" class="game-button">Play Now</a>-->
+                </div>
             </div>
-         </div>
-         <!-- Add more games as needed -->
-      </main>
-      <footer>
-         <p>&copy; 2024 ST Corporation. All rights reserved.</p>
-         <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
-      </footer>
-   </body>
+            <!-- Add more games as needed -->
+        </main>
+        <footer>
+            <p>&copy; 2024 ST Corporation. All rights reserved.</p>
+            <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
+        </footer>
+    </body>
 </html>

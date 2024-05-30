@@ -8,7 +8,8 @@
         <style>
             body {
             background-image: url("https://images3.alphacoders.com/118/1182777.png");
-            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-position: center;
             font-family: Arial, sans-serif; /* Example font family */
             margin: 0;
@@ -22,7 +23,7 @@
             font-size: 28px;
             }
             nav {
-            background-color: #495057;
+            background-color: #0f1214;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -42,6 +43,21 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            }
+            .page {
+                display: none;
+            }
+            .page.active {
+                display: block;
+            }
+            .pagination {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .pagination a {
+                margin: 0 30px;
+                text-decoration: none;
+                color: white;
             }
             .game {
             margin: 20px;
@@ -108,44 +124,108 @@
             bottom: 0;
             }
         </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let currentPage = 1;
+                const pages = document.querySelectorAll('.page');
+                const showPage = (page) => {
+                    pages.forEach((pg, index) => {
+                        pg.classList.toggle('active', index === page - 1);
+                    });
+                };
+    
+                document.querySelectorAll('.pagination a').forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        currentPage = parseInt(this.dataset.page);
+                        showPage(currentPage);
+                    });
+                });
+    
+                showPage(currentPage);
+            });
+        </script>
+
     </head>
     <body>
         <header>
             <h1>ST Corporation</h1>
         </header>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <div class="pagination">
+                <a href="#" data-page="1">Home</a>
+                <a href="#" data-page="2">Games</a>
+                <a href="#" data-page="3">About</a>
+                <a href="#" data-page="4">Contact</a>
+            </div>
         </nav>
-        <main>
-            <div class="game">
-                <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
-                <div class="game-info">
-                    <h2 class="game-title">Cat House</h2>
-                    <p class="game-description">A idle game with many cat in a beautiful house</p>
-                    <div class="platform-icons">
-                        <i class="fab fa-windows"></i> <!-- Icon for Windows -->
-                        <i class="fab fa-android"></i> <!-- Icon for Android -->
-                        <i class="fab fa-apple"></i> <!-- Icon for iOS -->
+
+        <div class="page active">
+            <main>
+                <h1>Despite the challenges, our game development teams play a crucial role in the gaming industry. We bring fresh ideas, diverse voices, and a passion for gaming that often results in groundbreaking and memorable experiences.</h1>
+            </main>
+        </div>
+
+        <div class="page">
+            <main>
+                <div class="game">
+                    <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
+                    <div class="game-info">
+                        <h2 class="game-title">Cat House</h2>
+                        <p class="game-description">A idle game with many cat in a beautiful house</p>
+                        <div class="platform-icons">
+                            <i class="fab fa-windows"></i> <!-- Icon for Windows -->
+                            <i class="fab fa-android"></i> <!-- Icon for Android -->
+                            <i class="fab fa-apple"></i> <!-- Icon for iOS -->
+                        </div>
+                        <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
                     </div>
-                    <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
                 </div>
-            </div>
-            <div class="game">
-                <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.6435-9/126230936_3589386461121125_2437320804972726597_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGk3mrAQeczs4MJLFur6pGJnh_zikI3LxmeH_OKQjcvGVozskdxQAcGprbkSKyuUv-qlvVboNfcYBLUh4nA96Ue&_nc_ohc=sVEmkNhOrosQ7kNvgGkOfRb&_nc_ht=scontent.fsgn2-9.fna&oh=00_AYCsNvHdBJaZfUEbaONImQ1fCzqAeqnpflboZyJMPKsV4g&oe=6680433F" alt="Game 2">
-                <div class="game-info">
-                    <h2 class="game-title">Coming soon</h2>
-                    <!--<p class="game-description">...</p>-->
-                    <!--<a href="#" class="game-button">Play Now</a>-->
+            </main>
+        </div>
+        
+        <div class="page">
+            <main>
+                <div class="game">
+                    <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t1.6435-9/126230936_3589386461121125_2437320804972726597_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGk3mrAQeczs4MJLFur6pGJnh_zikI3LxmeH_OKQjcvGVozskdxQAcGprbkSKyuUv-qlvVboNfcYBLUh4nA96Ue&_nc_ohc=sVEmkNhOrosQ7kNvgGkOfRb&_nc_ht=scontent.fsgn2-9.fna&oh=00_AYCsNvHdBJaZfUEbaONImQ1fCzqAeqnpflboZyJMPKsV4g&oe=6680433F" alt="Game 1">
+                    <div class="game-info">
+                        <h1 class="game-title">Diep Buu Sanh</h1>
+                        <p class="game-title">Chief executive officer</p>
+                    </div>
                 </div>
-            </div>
-            <!-- Add more games as needed -->
-        </main>
+                <div class="game">
+                    <img src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t31.18172-8/11393593_890939000965898_4883765905287337597_o.jpg?stp=dst-jpg_p206x206&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHytACnnQ4fz5j2qpMbFoiT5yUu8NHyMrbnJS7w0fIytum_WKPI7YESyLXmRHGpZhHEAli7DA_MqOisYw9l-MkK&_nc_ohc=Mygto-r6y2MQ7kNvgGqgQAk&_nc_ht=scontent.fsgn2-7.fna&oh=00_AYDqSDPqmyguyIMTMEf4SqYNouaTy0mTnUwVljhieUB5ZA&oe=66804F49" alt="Game 2">
+                    <div class="game-info">
+                        <h1 class="game-title">Diep Buu Sanh</h1>
+                        <p class="game-title">Head of design</p>
+                    </div>
+                </div>
+                <div class="game">
+                    <img src="https://scontent.fsgn2-11.fna.fbcdn.net/v/t1.18169-9/21761972_1555864617806663_3108866212909887144_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEfMa0tmtFv_nZ8hP648GTmHB99Ir7jOdAcH30ivuM50NxT9s_bCxL4V6wJzY_g02630MiMsvORv6CVjera9tbc&_nc_ohc=cZLcLY7doGwQ7kNvgHxwIbE&_nc_ht=scontent.fsgn2-11.fna&oh=00_AYB7BnmFhM5Q8WZce8QD-N0cNwnaowFTGXYeBv19VV71gQ&oe=668057BC" alt="Game 3">
+                    <div class="game-info">
+                        <h1 class="game-title">Diep Buu Sanh</h1>
+                        <p class="game-title">Chief technilogy officer</p>
+                    </div>
+                </div>
+                <div class="game">
+                    <img src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.18169-9/11219710_895650950494703_8915220959141736194_n.jpg?stp=c0.23.206.206a_dst-jpg_p206x206&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeED3BAt9dH7e9G38CZcH-ArczXyGJEe085zNfIYkR7Tzi6lEEK7ttxpsNnVUYZY89HPUFtLnEbeRBE0I1XWAV-V&_nc_ohc=WJ8uH0WWikgQ7kNvgEr2y_C&_nc_ht=scontent.fsgn2-3.fna&oh=00_AYAsQZKnDGH5VExgdZOLMQAmUM2psmH9G6cinlCTv7S2fw&oe=66806419" alt="Game 4">
+                    <div class="game-info">
+                        <h1 class="game-title">Diep Buu Sanh</h1>
+                        <p class="game-title">Head of artist</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <div class="page">
+            <main>
+                <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
+            </main>
+        </div>
+
         <footer>
             <p>&copy; 2024 ST Corporation. All rights reserved.</p>
-            <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
         </footer>
     </body>
 </html>

@@ -1,129 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ST</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-        }
-        header {
-            background-color: #202124;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #2f3236;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        main {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .game {
-            margin: 10px;
-            width: 300px;
-            background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .game:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .game img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-        }
-        .game-info {
-            padding: 15px;
-        }
-        .game-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .game-description {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 15px;
-        }
-        .game-button {
-            display: block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-        }
-        .game-button:hover {
-            background-color: #45a049;
-        }
-      
-      footer {
-            background-color: #202124; /* Change the background color as needed */
-            color: white;
-            text-align: center;
-            padding: 20px 0; /* Add padding to the top and bottom */
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>ST Corporation</h1>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-    <main>
-        <div class="game">
-            <img src="https://imagev3.vietnamplus.vn/480x320/Uploaded/2024/mzdic/2024_05_05/ronaldo-0505-4108.jpg" alt="Game 1">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ST</title>
+      <style>
+         body {
+         font-family: 'Roboto', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f8f9fa;
+         }
+         header {
+         background-color: #343a40;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         font-size: 28px;
+         }
+         nav {
+         background-color: #495057;
+         color: white;
+         padding: 10px 0;
+         text-align: center;
+         }
+         nav a {
+         color: white;
+         text-decoration: none;
+         margin: 0 15px;
+         font-size: 18px;
+         transition: color 0.3s ease-in-out;
+         }
+         nav a:hover {
+         color: #ffc107; /* Change to a color of your choice */
+         }
+         main {
+         padding: 20px;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         }
+         .game {
+         margin: 20px;
+         width: 300px;
+         background-color: white;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+         }
+         .game:hover {
+         transform: scale(1.05);
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+         }
+         .game img {
+         width: 100%;
+         height: auto;
+         border-bottom: 1px solid #ddd;
+         border-radius: 10px 10px 0 0;
+         }
+         .game-info {
+         padding: 15px;
+         }
+         .game-title {
+         font-size: 20px;
+         margin-bottom: 10px;
+         }
+         .game-description {
+         font-size: 16px;
+         color: #777;
+         margin-bottom: 15px;
+         }
+         .game-button {
+         display: block;
+         background-color: #007bff;
+         color: white;
+         padding: 10px 0;
+         text-align: center;
+         text-decoration: none;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s ease-in-out;
+         }
+         .game-button:hover {
+         background-color: #0056b3;
+         }
+         footer {
+         background-color: #343a40;
+         color: white;
+         text-align: center;
+         padding: 30px 0;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>ST Corporation</h1>
+      </header>
+      <nav>
+         <a href="#">Home</a>
+         <a href="#">Games</a>
+         <a href="#">About</a>
+         <a href="#">Contact</a>
+      </nav>
+      <main>
+         <video autoplay muted loop id="background-video">
+            <source src="https://example.com/path/to/your/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+         <div class="game">
+            <img src="https://drive.google.com/file/d/1_1FM59dAlIgqG7CPMh3DuQ9NLOWW-LfS/view?usp=drive_link" alt="Game 1">
             <div class="game-info">
-                <h2 class="game-title">Cat House</h2>
-                <p class="game-description">A idle game with many cat in a beautiful house</p>
-                <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
+               <h2 class="game-title">Cat House</h2>
+               <p class="game-description">A idle game with many cat in a beautiful house</p>
+               <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
             </div>
-        </div>
-        <div class="game">
+         </div>
+         <div class="game">
             <img src="game2.jpg" alt="Game 2">
             <div class="game-info">
-                <h2 class="game-title">Coming soon</h2>
-                <p class="game-description">...</p>
-                <a href="#" class="game-button">Play Now</a>
+               <h2 class="game-title">Coming soon</h2>
+               <p class="game-description">...</p>
+               <a href="#" class="game-button">Play Now</a>
             </div>
-        </div>
-        <!-- Add more games as needed -->
-    </main>
-
-    <footer>
-        <p>&copy; 2024 ST Corporation. All rights reserved.</p>
-        <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
-    </footer>
-</body>
+         </div>
+         <!-- Add more games as needed -->
+      </main>
+      <footer>
+         <p>&copy; 2024 ST Corporation. All rights reserved.</p>
+         <p>Contact us at: https://www.facebook.com/thien.diep.39</p>
+      </footer>
+   </body>
 </html>

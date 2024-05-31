@@ -82,7 +82,6 @@
             }
             .game img {
             width: 100%;
-            height: auto;
             border-bottom: 1px solid #ddd;
             border-radius: 10px 10px 0 0;
             }
@@ -118,13 +117,17 @@
             display: block;
             background-color: #007bff;
             color: white;
-            padding: 10px 0;
             text-align: center;
             text-decoration: none;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
+            padding: 10px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0; 
+            left: 0;  
             }
             .game-button:hover {
             background-color: #0056b3;
@@ -201,7 +204,7 @@
         <div class="page">
             <main>
                 <div class="game">
-                    <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
+                    <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1" height="300px">
                     <div class="game-info">
                         <h2 class="game-title">Cat House</h2>
                         <p class="game-description">An idle game with many cat in a beautiful house</p>
@@ -215,7 +218,7 @@
                 </div>
 
                 <div class="game">
-                    <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
+                    <img src="https://static.wikia.nocookie.net/party-animals/images/9/92/Levi.png" alt="Game 1" height="300px">
                     <div class="game-info">
                         <h2 class="game-title">Cat Move</h2>
                         <p class="gamae-description">Move cat left or right to avoid food</p>
@@ -229,7 +232,7 @@
                                 var iframe = document.getElementById('gameIframe');
                                 if (iframe.style.display === 'none' || iframe.style.display === '') {
                                     iframe.style.display = 'block';
-                                    this.textContent = 'Playing';
+                                    this.textContent = 'Off';
                                 } else {
                                     iframe.style.display = 'none';
                                     this.textContent = 'Play';
@@ -283,7 +286,10 @@
     </body>
     
     <div class="web-game">
-    <main><iframe id="gameIframe" src="Webgame/Test/index.html" width="600" height="800" style="border:none; display:none;"></iframe></main>
+        <main>
+            <iframe id="gameIframe" src="Webgame/Test/index.html" width="600" height="800" style="border:none; display:none;">
+            </iframe>
+        </main>
     </div>
     
     <footer>

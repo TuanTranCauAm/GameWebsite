@@ -14,6 +14,7 @@
             font-family: Arial, sans-serif; /* Example font family */
             margin: 0;
             padding: 0;
+            min-height: 800px;
             }
             header {
             background-color: #343a40;
@@ -97,6 +98,13 @@
             color: #777;
             margin-bottom: 15px;
             }
+            .web-game {
+                position: fixed;
+                z-index: 9999;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
             .platform-icons {
             margin-top: 10px;
             text-align: center; /* Center-align the icons */
@@ -126,9 +134,11 @@
             color: white;
             text-align: center;
             padding: 30px 0;
-            position: fixed;
             width: 100%;
-            bottom: 0;
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            z-index: 10;
             }
         </style>
 
@@ -194,13 +204,38 @@
                     <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
                     <div class="game-info">
                         <h2 class="game-title">Cat House</h2>
-                        <p class="game-description">A idle game with many cat in a beautiful house</p>
+                        <p class="game-description">An idle game with many cat in a beautiful house</p>
                         <div class="platform-icons">
                             <i class="fab fa-windows"></i> <!-- Icon for Windows -->
                             <i class="fab fa-android"></i> <!-- Icon for Android -->
                             <i class="fab fa-apple"></i> <!-- Icon for iOS -->
                         </div>
                         <a href="https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL" class="game-button">Download</a>
+                    </div>
+                </div>
+
+                <div class="game">
+                    <img src="https://www.theloadout.com/wp-content/sites/theloadout/2023/08/party-animals-characters-macchiato.jpg" alt="Game 1">
+                    <div class="game-info">
+                        <h2 class="game-title">Cat Move</h2>
+                        <p class="gamae-description">Move cat left or right to avoid food</p>
+                        <a id="toggleButton" class="game-button">Play</a>
+                        
+                        <!-- Include any existing scripts -->
+                        <script src="Webgame/Test/script.js"></script>
+                        <!-- Include the toggle script -->
+                        <script>
+                            document.getElementById('toggleButton').addEventListener('click', function() {
+                                var iframe = document.getElementById('gameIframe');
+                                if (iframe.style.display === 'none' || iframe.style.display === '') {
+                                    iframe.style.display = 'block';
+                                    this.textContent = 'Playing';
+                                } else {
+                                    iframe.style.display = 'none';
+                                    this.textContent = 'Play';
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </main>
@@ -245,8 +280,13 @@
             </main>
         </div>
 
-        <footer>
-            <p>&copy; 2024 ST Corporation. All rights reserved.</p>
-        </footer>
     </body>
+    
+    <div class="web-game">
+    <main><iframe id="gameIframe" src="Webgame/Test/index.html" width="600" height="800" style="border:none; display:none;"></iframe></main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 ST Corporation. All rights reserved.</p>
+    </footer>
 </html>

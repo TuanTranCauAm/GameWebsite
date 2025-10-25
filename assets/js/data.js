@@ -1,16 +1,15 @@
-// Game data model
 const GAMES = [
   {
     title: "Cat House",
-    desc: "An idle game where adorable cats live in a luxurious house. Manage resources and unlock more rooms!",
-    img: "assets/img/cat-house.jpg",
+    desc: "An idle cat simulation where you clean, decorate, and manage your own cat mansion!",
+    img: "assets/img/games/game1.png",
     link: "https://drive.google.com/drive/u/0/folders/1w1tEvp_gxBfPgQGZXjPdbLw5vFww_0kL",
     platforms: ["windows", "android", "apple"]
   },
   {
     title: "Cat Move",
-    desc: "Control your cat to dodge food raining from the sky. Endless fun and challenge!",
-    img: "assets/img/cat-move.jpg",
+    desc: "Dodge, jump, and slide through endless obstacles in this fast-paced cat adventure!",
+    img: "assets/img/games/game2.png",
     link: "Webgame/Test/index.html",
     platforms: ["android", "apple"]
   }

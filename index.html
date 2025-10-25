@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ST Corporation</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ST Corporation</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/games.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <div id="header"></div>
+  <div id="header"></div>
+  <div id="navbar"></div>
+  <main id="content"></main>
+  <div id="footer"></div>
 
-    <!-- Navbar -->
-    <div id="navbar"></div>
+  <div id="game-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
 
-    <!-- Nội dung (View sẽ load động ở đây) -->
-    <main id="content"></main>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/modal.js"></script>
 </body>
 </html>

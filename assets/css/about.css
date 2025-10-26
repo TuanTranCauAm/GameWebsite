@@ -1,0 +1,164 @@
+/* ==========================================
+🐸 Black Frog - About Page
+========================================== */
+
+.about-section {
+  padding: 100px 10%;
+  color: #fff;
+  background: radial-gradient(circle at top, #0a0f18, #000);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeUp 1s ease forwards;
+}
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.about-hero span {
+  color: #00fff2;
+  text-shadow: 0 0 20px #00fff2, 0 0 40px #00b8ff;
+}
+.about-hero p {
+  color: #bfc8d4;
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* STORY */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+.about-text {
+  flex: 1;
+  min-width: 320px;
+}
+.about-text h2 {
+  font-size: 2rem;
+  color: #00fff2;
+  margin-bottom: 20px;
+}
+.about-text p {
+  line-height: 1.7;
+  color: #ccc;
+  font-size: 1rem;
+}
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(0,255,242,0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(0,255,242,0.6);
+}
+
+/* VALUES */
+.about-values {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+.value-card {
+  background: rgba(20, 25, 30, 0.85);
+  border: 1px solid rgba(0,255,242,0.3);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  width: 280px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(0,255,242,0.1);
+}
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 50px rgba(0,255,242,0.5);
+}
+.value-card i {
+  font-size: 2.5rem;
+  color: #00fff2;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px #00fff2;
+}
+.value-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+.value-card p {
+  color: #bfc8d4;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* VISION */
+.about-vision {
+  text-align: center;
+  margin-bottom: 100px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-vision h2 {
+  font-size: 2rem;
+  color: #00fff2;
+  margin-bottom: 20px;
+}
+.about-vision p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* FOOTER QUOTE */
+.about-footer {
+  text-align: center;
+  font-style: italic;
+  color: #00fff2;
+  text-shadow: 0 0 15px #00fff2;
+}
+.about-footer h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.about-footer p {
+  color: #999;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text, .about-image {
+    max-width: 100%;
+  }
+}

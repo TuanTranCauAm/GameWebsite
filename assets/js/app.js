@@ -88,6 +88,10 @@ function loadView(page) {
           console.log("📞 Loading Contact page...");
           safeLoadScript("assets/js/contact.js");
           break;
+        case "privacy":
+          console.log("🔒 Loading Privacy Policy page...");
+          safeLoadScript("assets/js/privacy.js");
+          break;
         default:
           safeLoadScript(`assets/js/${page}.js`);
           break;
@@ -115,7 +119,7 @@ function safeLoadScript(src, callback) {
 function loadScript(src, callback) {
   const s = document.createElement("script");
   s.src = src;
-  s.onload = callback || (() => {});
+  s.onload = callback || (() => { });
   s.onerror = () => console.error(`❌ Failed to load script: ${src}`);
   document.body.appendChild(s);
 }

@@ -1,0 +1,90 @@
+/* ==========================================
+📞 Black Frog - Contact Page
+========================================== */
+
+.contact {
+  min-height: 90vh;
+  padding: 100px 10%;
+  background: radial-gradient(circle at center, #0a0f18, #000);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.contact .section-title {
+  font-size: 2.8rem;
+  color: #00fff2;
+  text-shadow: 0 0 25px #00fff2, 0 0 50px #00b8ff;
+  margin-bottom: 60px;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Contact List */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.2rem;
+  background: rgba(20, 25, 30, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(0,255,242,0.3);
+  padding: 40px 60px;
+  box-shadow: 0 0 40px rgba(0,255,242,0.1);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeUp 1.3s ease forwards;
+}
+
+.contact-list div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.contact-list div:hover {
+  color: #00fff2;
+  transform: scale(1.05);
+}
+
+.contact-list i {
+  font-size: 1.4rem;
+  color: #00fff2;
+  text-shadow: 0 0 15px #00fff2;
+}
+
+.contact-list a {
+  color: #00fff2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contact-list a:hover {
+  text-shadow: 0 0 15px #00fff2, 0 0 30px #00b8ff;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact {
+    padding: 80px 5%;
+  }
+  .contact-list {
+    padding: 30px;
+  }
+  .contact .section-title {
+    font-size: 2rem;
+  }
+}

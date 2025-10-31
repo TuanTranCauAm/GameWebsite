@@ -70,14 +70,22 @@ function loadView(page) {
       });
 
       // Load corresponding JS or model/controller if needed
-      if (page === "games") {
-        console.log("🎮 Loading game model + controller...");
-        loadScript("assets/js/data.js", () => loadScript("assets/js/games.js"));
-      } else if (page === "about") {
-        console.log("📘 Loading About page...");
-        loadScript("assets/js/about.js"); // optional
-      } else {
-        loadScript(`assets/js/${page}.js`);
+      switch (page) {
+        case "games":
+          console.log("🎮 Loading Games model + controller...");
+          loadScript("assets/js/data.js", () => loadScript("assets/js/games.js"));
+          break;
+        case "about":
+          console.log("📘 Loading About page...");
+          safeLoadScript("assets/js/about.js");
+          break;
+        case "contact":
+          console.log("📞 Loading Contact page...");
+          safeLoadScript("assets/js/contact.js");
+          break;
+        default:
+          safeLoadScript(`assets/js/${page}.js`);
+          break;
       }
     })
     .catch(err => {
@@ -87,8 +95,18 @@ function loadView(page) {
 }
 
 /* ==========================================================
-🧩 Utility: Load JS dynamically
+🧩 Utility: Load JS dynamically (with error-safe)
 ========================================================== */
+function safeLoadScript(src, callback) {
+  checkFileExists(src, exists => {
+    if (exists) {
+      loadScript(src, callback);
+    } else {
+      console.log(`ℹ️ No script found for ${src}, skipping.`);
+    }
+  });
+}
+
 function loadScript(src, callback) {
   const s = document.createElement("script");
   s.src = src;

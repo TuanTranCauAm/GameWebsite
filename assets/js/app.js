@@ -92,6 +92,10 @@ function loadView(page) {
           console.log("🔒 Loading Privacy Policy page...");
           safeLoadScript("assets/js/privacy.js");
           break;
+        case "terms":
+          console.log("📜 Loading Terms of Service page...");
+          safeLoadScript("assets/js/terms.js");
+          break;
         default:
           safeLoadScript(`assets/js/${page}.js`);
           break;

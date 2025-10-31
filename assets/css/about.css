@@ -162,3 +162,67 @@
     max-width: 100%;
   }
 }
+
+/* ==========================================
+👨‍💼 CEO SECTION
+========================================== */
+.about-ceo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  text-align: center;
+  animation: fadeUp 1.3s ease forwards;
+}
+
+.ceo-photo img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(0,255,242,0.4);
+  box-shadow: 0 0 40px rgba(0,255,242,0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.ceo-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(0,255,242,0.7);
+}
+
+.ceo-info h2 {
+  color: #00fff2;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 20px #00fff2;
+}
+
+.ceo-title {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.ceo-info blockquote {
+  font-style: italic;
+  color: #bfc8d4;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.6;
+  text-shadow: 0 0 15px rgba(0,255,242,0.15);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .about-ceo {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .ceo-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}

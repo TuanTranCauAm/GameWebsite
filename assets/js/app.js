@@ -28,7 +28,12 @@ function loadComponent(id, url) {
     .then(res => res.text())
     .then(html => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = html;
+      if (el) {
+        el.innerHTML = html;
+
+        // 🧭 Nếu là navbar thì kích hoạt hiệu ứng active link
+        if (id === "navbar") initNavbarActiveEffect();
+      }
     })
     .catch(err => console.error(`❌ Error loading component ${url}:`, err));
 }
@@ -122,4 +127,58 @@ function checkFileExists(url, callback) {
   fetch(url, { method: "HEAD" })
     .then(res => callback(res.ok))
     .catch(() => callback(false));
+}
+
+/* ==========================================================
+🧭 Navbar Active Highlight
+========================================================== */
+function initNavbarActiveEffect() {
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  // Chỉ smooth scroll nếu có section tương ứng trong trang hiện tại
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href") || "";
+      if (!href.startsWith("#")) return; // link thường => cho đi tự nhiên
+
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        // In-page anchor: scroll mượt, KHÔNG đổi route
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+      // Nếu KHÔNG có section (route SPA) => KHÔNG preventDefault
+      // để hash đổi và router() xử lý
+    });
+  });
+
+  // Auto highlight theo section hiện tại (nếu có)
+  const sections = document.querySelectorAll("section[id]");
+  function activateLink() {
+    let current = "";
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      const h = section.clientHeight;
+      if (scrollY >= top && scrollY < top + h) current = section.id;
+    });
+
+    navLinks.forEach(l => {
+      const href = l.getAttribute("href");
+      l.classList.toggle("active", href === `#${current}`);
+    });
+  }
+  window.addEventListener("scroll", activateLink);
+
+  // Đồng bộ active theo route khi hash thay đổi (SPA)
+  window.addEventListener("hashchange", () => {
+    navLinks.forEach(l => {
+      l.classList.toggle("active", l.getAttribute("href") === location.hash);
+    });
+  });
+
+  // Gọi lần đầu
+  activateLink();
+  navLinks.forEach(l => {
+    l.classList.toggle("active", l.getAttribute("href") === location.hash);
+  });
 }

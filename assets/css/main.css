@@ -50,6 +50,13 @@ body {
   text-shadow: 0 0 12px #00fff2;
 }
 
+.navbar a.active {
+  color: #00fff2;
+  text-shadow: 0 0 12px #00fff2, 0 0 30px #00b8ff;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
 /* =======================================
 🎬 HERO VIDEO SECTION (INTRO)
 ======================================= */

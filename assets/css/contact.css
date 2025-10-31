@@ -1,9 +1,8 @@
 /* ==========================================
-📞 Black Frog - Contact Page
+📞 Black Frog - Contact Page (Refined)
 ========================================== */
-
 .contact {
-  min-height: 90vh;
+  min-height: 50vh;
   padding: 100px 10%;
   background: radial-gradient(circle at center, #0a0f18, #000);
   color: #fff;
@@ -23,51 +22,65 @@
   animation: fadeUp 1s ease forwards;
 }
 
-/* Contact List */
-.contact-list {
+/* Card Container */
+.contact-card {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  font-size: 1.2rem;
-  background: rgba(20, 25, 30, 0.85);
+  gap: 40px;
+  background: rgba(15, 20, 25, 0.85);
   border-radius: 16px;
-  border: 1px solid rgba(0,255,242,0.3);
-  padding: 40px 60px;
-  box-shadow: 0 0 40px rgba(0,255,242,0.1);
-  max-width: 600px;
+  border: 1px solid rgba(0,255,242,0.25);
+  box-shadow: 0 0 40px rgba(0,255,242,0.08);
+  padding: 60px 80px;
   width: 100%;
-  animation: fadeUp 1.3s ease forwards;
+  max-width: 650px;
+  animation: fadeUp 1.2s ease forwards;
 }
 
-.contact-list div {
+/* Individual Item */
+.contact-item {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 15px;
-  color: #ccc;
+  gap: 20px;
+  text-align: left;
+  color: #bfc8d4;
   transition: 0.3s;
 }
 
-.contact-list div:hover {
+.contact-item:hover {
+  transform: translateY(-5px);
   color: #00fff2;
-  transform: scale(1.05);
 }
 
-.contact-list i {
-  font-size: 1.4rem;
+/* Icon Style */
+.contact-item i {
+  font-size: 2rem;
   color: #00fff2;
-  text-shadow: 0 0 15px #00fff2;
-}
-
-.contact-list a {
-  color: #00fff2;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.contact-list a:hover {
   text-shadow: 0 0 15px #00fff2, 0 0 30px #00b8ff;
+  width: 40px;
+  text-align: center;
+}
+
+/* Texts */
+.contact-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #00fff2;
+}
+
+.contact-item a,
+.contact-item p {
+  color: #ccc;
+  margin: 4px 0 0;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #00fff2;
+  text-shadow: 0 0 10px #00fff2, 0 0 25px #00b8ff;
 }
 
 /* Animation */
@@ -79,12 +92,16 @@
 /* Responsive */
 @media (max-width: 600px) {
   .contact {
-    padding: 80px 5%;
+    padding: 80px 6%;
   }
-  .contact-list {
-    padding: 30px;
+  .contact-card {
+    padding: 40px 30px;
   }
-  .contact .section-title {
-    font-size: 2rem;
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-item i {
+    font-size: 1.8rem;
   }
 }
